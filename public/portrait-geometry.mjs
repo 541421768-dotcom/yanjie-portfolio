@@ -1,0 +1,2 @@
+export function coverRect(iw,ih,w,h){const scale=Math.max(w/iw,h/ih);return {x:(w-iw*scale)/2,y:(h-ih*scale)/2,width:iw*scale,height:ih*scale}}
+export function fragmentGrid(w,h,columns=8,rows=10){const pieces=[];for(let row=0;row<rows;row++)for(let col=0;col<columns;col++){const x=col*w/columns,y=row*h/rows,width=w/columns,height=h/rows;for(let half=0;half<2;half++)pieces.push({x,y,width,height,clip:half?'polygon(100% 0, 100% 100%, 0 100%)':'polygon(0 0, 100% 0, 0 100%)',cx:x+width*(half?2/3:1/3),cy:y+height*(half?2/3:1/3)})}return pieces}

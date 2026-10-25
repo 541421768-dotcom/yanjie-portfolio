@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791874684631,
+      "tag": "0000_glorious_wither",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791875521269,
+      "tag": "0001_wooden_sasquatch",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791945233017,
+      "tag": "0002_bouncy_dorian_gray",
+      "breakpoints": true
+    }
+  ]
+}
