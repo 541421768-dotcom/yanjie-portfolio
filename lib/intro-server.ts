@@ -1,6 +1,6 @@
-import {env} from 'cloudflare:workers';
+import {readRecord} from './meoo-cloud';
 import {defaultIntro,type Intro} from './intro';
 export async function readIntro(){
- const row=await env.DB!.prepare('SELECT data,revision,updated_at FROM site_intro WHERE id=1').first<{data:string;revision:number;updated_at:string}>();
- return row?{intro:JSON.parse(row.data) as Intro,revision:row.revision,updatedAt:row.updated_at}:{intro:defaultIntro,revision:0,updatedAt:null};
+  const row=await readRecord<Intro>('site_intro');
+  return row?{intro:row.data,revision:row.revision,updatedAt:row.updated_at}:{intro:defaultIntro,revision:0,updatedAt:null};
 }

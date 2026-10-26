@@ -1,0 +1,15 @@
+[tools]
+node = "24.15.0"
+
+[tasks.install]
+run = "npm ci"
+
+[tasks.build]
+run = "npm run build"
+
+[tasks.start]
+run = "bash scripts/start.sh"
+
+[meoo.deploy]
+mode = "server"
+port = 9000
